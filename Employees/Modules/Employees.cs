@@ -8,6 +8,10 @@ namespace Employees.Modules
 {
     public class Employees
     {
-        string Name { get; set; }
+        private string _Person;
+
+        public string Person { get => _Person; set => _Person = value.Replace("<center><b><font size=7>", "").Replace("</font></b></center>", "").Replace("\n", ""); }
+
+
     }
 }
