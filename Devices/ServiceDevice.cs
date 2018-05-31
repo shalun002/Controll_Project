@@ -14,7 +14,7 @@ namespace Devices
     {
         private Random rand = new Random();
 
-        public string path = @"DeviceInfo.txt";
+        public string pathDevice = @"DeviceInfo.txt";
         public List<Device> devices;
 
         public ServiceDevice()
@@ -31,7 +31,6 @@ namespace Devices
                 device.Brend = ((IBrend)rand.Next(0, 8)).ToString();
                 device.DeviceName = ((DeviceName)rand.Next(0, 8)).ToString();
                 device.Price = rand.Next(10000, 100000);
-                //string PersonInCharge
                 device.Quantity = rand.Next(1, 100);
                 device.WarrantyPeriod = rand.Next(1, 5);
                 devices.Add(device);

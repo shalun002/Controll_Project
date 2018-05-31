@@ -10,6 +10,7 @@ namespace Employees
 
     public class ServiceEmployee
     {
+        public string pathEmployee = @"Employees.txt";
 
     }
 }

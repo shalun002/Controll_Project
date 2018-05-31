@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Devices.Modules
 {
-    public class Device : IBrend
+    public class Device
     {
         public string Brend { get; set; }            // бренд
         public string  DeviceName { get; set; }      // название техники
-        public int Price { get; set; }            // цена
+        public int Price { get; set; }               // цена
         public string PersonInCharge { get; set; }   // ответственное лицо
         public int Quantity { get; set; }            // количество
         public int WarrantyPeriod { get; set; }      // срок гарантии
