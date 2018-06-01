@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -50,7 +51,7 @@ namespace Devices
             Console.WriteLine("Введите ответственное лицо: ");
             device.PersonInCharge = Console.ReadLine();
 
-            if (isExistsPhone(device))
+            if (isExistsDevice(device))
             {
                 devices.Add(device);
                 addDeviceToXml(device);
@@ -60,10 +61,13 @@ namespace Devices
                 Console.WriteLine("Товар добавлен успешно!!!");
                 Console.WriteLine();
                 Console.WriteLine("==================================================================");
+                Thread.Sleep(2000);
+                Console.Clear();
+
             }
         }
 
-        private bool isExistsPhone(Device device)
+        private bool isExistsDevice(Device device)
         {
             if (devices.Where(w => w.DeviceName == device.DeviceName).Count() > 0)
             {

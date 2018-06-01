@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08C16470-F63A-4BE6-8F02-77972B88AD6B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Controll_Project</RootNamespace>
-    <AssemblyName>Controll_Project</AssemblyName>
+    <ProjectGuid>{5661D25D-DA41-48DE-AF17-D97E1674B20A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Organizations</RootNamespace>
+    <AssemblyName>Organizations</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GeneratorName">
-      <HintPath>..\..\..\..\Downloads\GeneratorName.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,26 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Modules\Organization.cs" />
+    <Compile Include="OrganizationMenu.cs" />
+    <Compile Include="OrganizationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Departments\Departments.csproj">
-      <Project>{04245d94-bf12-4498-afe9-167a96797b90}</Project>
-      <Name>Departments</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Devices\Devices.csproj">
-      <Project>{7B123D6D-EEA3-4229-8182-99A7A035BE9B}</Project>
-      <Name>Devices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Organizations\Organizations.csproj">
-      <Project>{5661d25d-da41-48de-af17-d97e1674b20a}</Project>
-      <Name>Organizations</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
