@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devices", "Devices\Devices.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Departments", "Departments\Departments.csproj", "{04245D94-BF12-4498-AFE9-167A96797B90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organization", "Organization\Organization.csproj", "{23E541EE-298E-43C8-B6AF-CECEF618275C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizations", "Organization\Organizations.csproj", "{23E541EE-298E-43C8-B6AF-CECEF618275C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employees", "Employees\Employees.csproj", "{4D1264F6-E6C2-4B37-9AFC-C73C76A696AA}"
 EndProject

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,12 +53,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Departments\Departments.csproj">
+      <Project>{04245d94-bf12-4498-afe9-167a96797b90}</Project>
+      <Name>Departments</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Devices\Devices.csproj">
       <Project>{7B123D6D-EEA3-4229-8182-99A7A035BE9B}</Project>
       <Name>Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Organization\Organizations.csproj">
+      <Project>{23E541EE-298E-43C8-B6AF-CECEF618275C}</Project>
+      <Name>Organizations</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

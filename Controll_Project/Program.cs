@@ -1,9 +1,9 @@
-﻿using Devices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProgrammMenu;
 
 namespace Controll_Project
 {
@@ -11,8 +11,8 @@ namespace Controll_Project
     {
         static void Main(string[] args)
         {
-            ServiceDevice serv = new ServiceDevice();
-            serv.DeviceGenerator();
+            Menu menu = new Menu();
+            menu.ProgrammMenu();
         }
     }
 }
