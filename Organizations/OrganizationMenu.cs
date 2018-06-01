@@ -54,7 +54,7 @@ namespace Organizations
                     so.SearchOrganizationByOrgName(Console.ReadLine());
                     break;
                 case 5:
-                    so.Show();
+                    //so.Show();
                     break;
                 case 6:
                     break;
