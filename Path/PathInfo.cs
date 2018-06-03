@@ -10,5 +10,7 @@ namespace Path
     {
         public string pathOrg = @"OrgInfo.xml";
         public string pathDep = @"DepartInfo.xml";
+        public string pathEmployee = @"Employees.xml";
+        public string pathDevice = @"DeviceInfo.xml";
     }
 }

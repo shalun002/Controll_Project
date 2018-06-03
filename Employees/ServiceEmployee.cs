@@ -1,6 +1,7 @@
 ﻿using Devices.Modules;
 using Employees.Modules;
 using Organizations.Modules;
+using Path;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,7 @@ namespace Employees
 {
     public class ServiceEmployee
     {
-        public string pathEmployee = @"Employees.xml";
+        private PathInfo path = new PathInfo();
         private Random r = new Random();
 
         public List<Employee> employees = new List<Employee>();
@@ -92,23 +93,23 @@ namespace Employees
             elem.AppendChild(DepartmensName);
             elem.AppendChild(Device);
             doc.DocumentElement.AppendChild(elem);
-            doc.Save(pathEmployee);
+            doc.Save(path.pathEmployee);
         }
 
         private XmlDocument getDocument()
         {
             XmlDocument xd = new XmlDocument();
 
-            FileInfo fi = new FileInfo(pathEmployee);
+            FileInfo fi = new FileInfo(path.pathEmployee);
             if (fi.Exists)
             {
-                xd.Load(pathEmployee);
+                xd.Load(path.pathEmployee);
             }
             else
             {
                 XmlElement xl = xd.CreateElement("Employees");
                 xd.AppendChild(xl);
-                xd.Save(pathEmployee);
+                xd.Save(path.pathEmployee);
             }
             return xd;
         }
@@ -187,7 +188,7 @@ namespace Employees
                 }
             }
             if (find)
-                xd.Save(pathEmployee);
+                xd.Save(path.pathEmployee);
             Console.WriteLine();
             Console.WriteLine("Данные отредактированы и записаны!");
         }
@@ -211,18 +212,18 @@ namespace Employees
         public void SearchEmployeeByNameForDelete(string name)
         {
             XmlDocument xd = new XmlDocument();
-            xd.Load(pathEmployee);
+            xd.Load(path.pathEmployee);
             XmlNode root = xd.DocumentElement;
             XmlNode node = root.SelectSingleNode(String.Format("Name[Name = '{0}']", name));
             root.RemoveChild(node);
-            xd.Save(pathEmployee);
+            xd.Save(path.pathEmployee);
             Console.WriteLine();
             Console.WriteLine("Элементы удалены еспешно!");
         }
 
         public void ShowAll()
         {
-            var xd = XDocument.Load(pathEmployee);
+            var xd = XDocument.Load(path.pathEmployee);
 
             foreach (var x in xd.Descendants())
             {

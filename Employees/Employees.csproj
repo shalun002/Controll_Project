@@ -54,6 +54,10 @@
       <Project>{5661D25D-DA41-48DE-AF17-D97E1674B20A}</Project>
       <Name>Organizations</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Path\Path.csproj">
+      <Project>{53B40C6A-9F18-4574-AB7B-A0FA4FFEA4C6}</Project>
+      <Name>Path</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Devices.Modules;
+using Path;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,19 +13,9 @@ namespace Devices
 {
     public class ServiceDevice
     {
-        public string pathDevice = @"DeviceInfo.xml";
+        private PathInfo path = new PathInfo();
 
         public List<Device> devices = new List<Device>();
-
-        public ServiceDevice() : this("") { }
-
-        public ServiceDevice(string pathDevice)
-        {
-            if (string.IsNullOrEmpty(pathDevice))
-                this.pathDevice = Path.Combine(@"DeviceInfo.xml");
-            else
-                this.pathDevice = pathDevice;
-        }
 
         /// <summary>
         /// Добавление устройств в коллекцию
@@ -124,23 +115,23 @@ namespace Devices
             elem.AppendChild(WarrantyPeriod);
 
             doc.DocumentElement.AppendChild(elem);
-            doc.Save(pathDevice);
+            doc.Save(path.pathDevice);
         }
 
         private XmlDocument getDocument()
         {
             XmlDocument xd = new XmlDocument();
 
-            FileInfo fi = new FileInfo(pathDevice);
+            FileInfo fi = new FileInfo(path.pathDevice);
             if (fi.Exists)
             {
-                xd.Load(pathDevice);
+                xd.Load(path.pathDevice);
             }
             else
             {
                 XmlElement xl = xd.CreateElement("Devices");
                 xd.AppendChild(xl);
-                xd.Save(pathDevice);
+                xd.Save(path.pathDevice);
             }
             return xd;
         }
@@ -214,7 +205,7 @@ namespace Devices
                 }
             }
             if (find)
-                xd.Save(pathDevice);
+                xd.Save(path.pathDevice);
             Console.WriteLine();
             Console.WriteLine("Данные отредактированы и записаны!");
             Thread.Sleep(1200);
@@ -240,11 +231,11 @@ namespace Devices
         public void SearchDeviceByNameForDelete(string name)
         {
             XmlDocument xd = new XmlDocument();
-            xd.Load(pathDevice);
+            xd.Load(path.pathDevice);
             XmlNode root = xd.DocumentElement;
             XmlNode node = root.SelectSingleNode(String.Format("Device[DeviceName = '{0}']", name));
             root.RemoveChild(node);
-            xd.Save(pathDevice);
+            xd.Save(path.pathDevice);
             Console.WriteLine();
             Console.WriteLine("Элементы удалены еспешно!");
             Thread.Sleep(1200);
