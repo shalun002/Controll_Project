@@ -11,7 +11,5 @@ namespace Departments.Modules
     {
         public string DepartName { get; set; }
         public int DepartTelNumber { get; set; }
-
-        public List<Device> devices = new List<Device>(); 
     }
 }

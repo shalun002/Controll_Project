@@ -12,6 +12,7 @@ namespace Organizations.Modules
         public string OrgName { get; set; }
         public string TelefonNumber { get; set; }
         public string AddressOrganization { get; set; }
+        public string Departament { get; set; }
 
     }
 }

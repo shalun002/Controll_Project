@@ -1,4 +1,5 @@
 ﻿using Departments.Modules;
+using Path;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,18 +14,19 @@ namespace Departments
 {
     public class ServiceDepart
     {
-        public string pathDep = @"DepartInfo.xml";
+        private PathInfo path = new PathInfo();
+
         public List<Depart> departs = new List<Depart>();
 
-        public ServiceDepart() : this("") { }
+        //public ServiceDepart() : this("") { }
 
-        public ServiceDepart(string pathDep)
-        {
-            if (string.IsNullOrEmpty(pathDep))
-                this.pathDep = Path.Combine(@"DepartInfo.xml");
-            else
-                this.pathDep = pathDep;
-        }
+        //public ServiceDepart(string pathDep)
+        //{
+        //    if (string.IsNullOrEmpty(path.pathDep))
+        //        this.path.pathDep = pathDep;
+        //    else
+        //        this.path.pathDep = pathDep;
+        //}
 
         /// <summary>
         /// Добавление департамента в коллекцию
@@ -78,23 +80,23 @@ namespace Departments
             elem.AppendChild(DepartTelNumber);
             
             doc.DocumentElement.AppendChild(elem);
-            doc.Save(pathDep);
+            doc.Save(path.pathDep);
         }
 
         private XmlDocument getDocument()
         {
             XmlDocument xd = new XmlDocument();
 
-            FileInfo fi = new FileInfo(pathDep);
+            FileInfo fi = new FileInfo(path.pathDep);
             if (fi.Exists)
             {
-                xd.Load(pathDep);
+                xd.Load(path.pathDep);
             }
             else
             {
                 XmlElement xl = xd.CreateElement("Departaments");
                 xd.AppendChild(xl);
-                xd.Save(pathDep);
+                xd.Save(path.pathDep);
             }
             return xd;
         }
@@ -172,7 +174,7 @@ namespace Departments
                 }
             }
             if (find)
-                xd.Save(pathDep);
+                xd.Save(path.pathDep);
             Console.WriteLine();
             Console.WriteLine("Данные отредактированы и записаны!");
         }
@@ -196,11 +198,11 @@ namespace Departments
         public void SearchDepartByNameForDelete(string name)
         {
             XmlDocument xd = new XmlDocument();
-            xd.Load(pathDep);
+            xd.Load(path.pathDep);
             XmlNode root = xd.DocumentElement;
             XmlNode node = root.SelectSingleNode(String.Format("Departament[DepartName = '{0}']", name));
             root.RemoveChild(node);
-            xd.Save(pathDep);
+            xd.Save(path.pathDep);
             Console.WriteLine();
             Console.WriteLine("Элементы удалены еспешно!");
         }
