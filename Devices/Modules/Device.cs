@@ -14,10 +14,5 @@ namespace Devices.Modules
         public string PersonInCharge { get; set; }   // ответственное лицо
         public int Quantity { get; set; }            // количество
         public int WarrantyPeriod { get; set; }      // срок гарантии
-        
-        //public void Show()
-        //{
-        //    Console.WriteLine($"Brend: {Brend}, DeviceName: {DeviceName}, Price: {Price}, PersonInCharge: {PersonInCharge}, Quantity: {Quantity}, WarrantyPeriod: {WarrantyPeriod}");
-        //}
     }
 }

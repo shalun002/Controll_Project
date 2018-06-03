@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Organizations
 {
@@ -14,6 +15,7 @@ namespace Organizations
     {
         public string pathOrg = @"OrgInfo.xml";
         public List<Organization> organizations = new List<Organization>();
+        private static Organization organization = new Organization();
 
         ///<summary>
         /// Добавление организации в коллекцию
@@ -24,15 +26,16 @@ namespace Organizations
             {
                 Organization organization = new Organization();
 
-                Console.WriteLine("Введите название организации: ");
+                Console.Write("Введите название организации: ");
                 organization.OrgName = Console.ReadLine();
 
-                Console.WriteLine("Введите адрес организации: ");
+                Console.Write("Введите адрес организации: ");
                 organization.AddressOrganization = Console.ReadLine();
 
-                Console.WriteLine("Введите телефон организации: ");
+                Console.Write("Введите телефон организации: ");
                 organization.TelefonNumber = Console.ReadLine();
-                
+
+
                 if (isExistsOrganization(organization))
                 {
                     organizations.Add(organization);
@@ -43,7 +46,7 @@ namespace Organizations
                     Console.WriteLine("Организация добавлена успешно!!!");
                     Console.WriteLine();
                     Console.WriteLine("==================================================================");
-                    Thread.Sleep(1500);
+                    Thread.Sleep(1200);
                     Console.Clear();
                 }
             }
@@ -210,7 +213,15 @@ namespace Organizations
 
         public void ShowAll()
         {
+            var xd = XDocument.Load(pathOrg);
 
+            foreach (var x in xd.Descendants())
+            {
+                if (x.HasElements)
+                    Console.WriteLine("\n{0}\n ", x.Name);
+                else
+                    Console.WriteLine("\t{0}: \t{1}", x.Name, x.Value);
+            }
         }
     }
 }

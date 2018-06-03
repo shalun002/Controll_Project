@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GeneratorName">
-      <HintPath>..\..\..\..\Downloads\GeneratorName.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +57,10 @@
     <ProjectReference Include="..\Devices\Devices.csproj">
       <Project>{7B123D6D-EEA3-4229-8182-99A7A035BE9B}</Project>
       <Name>Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Employees\Employees.csproj">
+      <Project>{4D1264F6-E6C2-4B37-9AFC-C73C76A696AA}</Project>
+      <Name>Employees</Name>
     </ProjectReference>
     <ProjectReference Include="..\Organizations\Organizations.csproj">
       <Project>{5661d25d-da41-48de-af17-d97e1674b20a}</Project>

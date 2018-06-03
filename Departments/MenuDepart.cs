@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Devices
+namespace Departments
 {
-    public class MenuDevice
+    public class MenuDepart
     {
-        public void DeviceMenu()
+        public void DepartMenu()
         {
-            ServiceDevice sd = new ServiceDevice();
+            ServiceDepart sd = new ServiceDepart();
 
             Console.WriteLine("========== Menu ==========");
             Console.WriteLine();
-            Console.WriteLine("1. Добавить устройство");
-            Console.WriteLine("2. Удалить устройство");
-            Console.WriteLine("3. Редактировать данные");
-            Console.WriteLine("4. Поиск устройства");
+            Console.WriteLine("1. Добавить департамент");
+            Console.WriteLine("2. Удалить департамент");
+            Console.WriteLine("3. Редактировать департамент");
+            Console.WriteLine("4. Поиск департамента");
             Console.WriteLine("5. Вернуться в главное меню");
             Console.WriteLine();
             Console.WriteLine("==========================");
@@ -33,27 +33,28 @@ namespace Devices
                 case 1:
                     Console.WriteLine("============ Добавление ============");
                     Console.WriteLine();
-                    sd.AddDevice();
+                    sd.AddDepart();
                     break;
                 case 2:
                     Console.WriteLine("============ Удаление ============");
                     Console.WriteLine();
-                    Console.Write("Введите название устройства, которое хотите удалить: ");
-                    sd.SearchDeviceByNameForDelete(Console.ReadLine());
+                    Console.Write("Введите название департамента, которое хотите удалить: ");
+                    sd.SearchDepartByNameForDelete(Console.ReadLine());
                     break;
                 case 3:
                     Console.WriteLine("============ Редактирование ============");
                     Console.WriteLine();
-                    Console.Write("Введите название устройства, которое хотите отредактировать: ");
-                    sd.SearchDeviceByNameForEdit(Console.ReadLine());
+                    Console.Write("Введите название департамента, которое хотите отредактировать: ");
+                    sd.SearchDepartByNameForEdit(Console.ReadLine());
                     break;
                 case 4:
                     Console.WriteLine("============ Поиск ============");
                     Console.WriteLine();
                     Console.Write("Введите название устройства: ");
-                    sd.SearchDeviceByDeviceName(Console.ReadLine());
+                    sd.SearchDepartByName(Console.ReadLine());
                     break;
                 case 5:
+
                     break;
             }
         }

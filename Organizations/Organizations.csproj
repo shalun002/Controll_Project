@@ -46,5 +46,11 @@
     <Compile Include="OrganizationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Departments\Departments.csproj">
+      <Project>{04245D94-BF12-4498-AFE9-167A96797B90}</Project>
+      <Name>Departments</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

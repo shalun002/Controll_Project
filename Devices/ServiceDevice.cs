@@ -33,22 +33,22 @@ namespace Devices
         {
             Device device = new Device();
 
-            Console.WriteLine("Введите название Бренда: ");
+            Console.Write("Введите название Бренда: ");
             device.Brend = Console.ReadLine();
 
-            Console.WriteLine("Введите название устройства: ");
+            Console.Write("Введите название устройства: ");
             device.DeviceName = Console.ReadLine();
 
-            Console.WriteLine("Введите колличество: ");
+            Console.Write("Введите колличество: ");
             device.Quantity = Int32.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите цену устройства: ");
+            Console.Write("Введите цену устройства: ");
             device.Price = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите срок гарантии: ");
+            Console.Write("Введите срок гарантии: ");
             device.WarrantyPeriod = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите ответственное лицо: ");
+            Console.Write("Введите ответственное лицо: ");
             device.PersonInCharge = Console.ReadLine();
 
             if (isExistsDevice(device))
@@ -61,7 +61,7 @@ namespace Devices
                 Console.WriteLine("Товар добавлен успешно!!!");
                 Console.WriteLine();
                 Console.WriteLine("==================================================================");
-                Thread.Sleep(2000);
+                Thread.Sleep(1200);
                 Console.Clear();
 
             }
@@ -169,6 +169,12 @@ namespace Devices
                     XmlElement el = Show(item);
                     break;
                 }
+                else
+                    Console.WriteLine();
+                    Console.WriteLine("Такого товара нет в базе данных!");
+                    Console.WriteLine();
+                Thread.Sleep(1200);
+                Console.Clear();
             }
         }
 
@@ -211,6 +217,8 @@ namespace Devices
                 xd.Save(pathDevice);
             Console.WriteLine();
             Console.WriteLine("Данные отредактированы и записаны!");
+            Thread.Sleep(1200);
+            Console.Clear();
         }
 
         private XmlElement Edit(XmlElement dev)
@@ -239,6 +247,8 @@ namespace Devices
             xd.Save(pathDevice);
             Console.WriteLine();
             Console.WriteLine("Элементы удалены еспешно!");
+            Thread.Sleep(1200);
+            Console.Clear();
         }
     }
 }

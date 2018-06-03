@@ -40,7 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuDepart.cs" />
+    <Compile Include="Modules\Depart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDepart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Devices\Devices.csproj">
+      <Project>{7B123D6D-EEA3-4229-8182-99A7A035BE9B}</Project>
+      <Name>Devices</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
